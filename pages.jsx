@@ -404,74 +404,112 @@ const GalleryPage = () => (
 /* ============================================================
    Contact page
    ============================================================ */
-const ContactPage = () => (
-  <main className="contact-page">
-    <div className="container">
-      <div className="contact-grid">
-        <div>
-          <span className="eyebrow"><span className="bullet" /> Get in touch</span>
-          <h1 style={{ marginTop: 18 }}>
-            Drop us a note.<br /><em>We read every one</em>.
-          </h1>
-          <p className="lead">
-            Whether you'd like to volunteer, partner, fundraise, or simply learn more about our work — we'd love to hear from you.
-          </p>
+// ⚠️ STEP 1: Replace "YOUR_FORM_ID" below with your real Formspree form ID.
+// You get this after creating a form at https://formspree.io — it looks like
+// "https://formspree.io/f/abcdwxyz". Just swap the ID part in the string below.
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/chiromafoundation@gmail.com";
 
-          <div className="contact-info">
-            <div className="info-row">
-              <div className="lbl"><Icon name="pin" size={12} /> &nbsp;Address</div>
-              <div className="val">{CONTENT.brand.address}</div>
-            </div>
-            <div className="info-row">
-              <div className="lbl"><Icon name="phone" size={12} /> &nbsp;Phone</div>
-              <div className="val">{CONTENT.brand.phone}</div>
-            </div>
-            <div className="info-row">
-              <div className="lbl"><Icon name="mail" size={12} /> &nbsp;Email</div>
-              <div className="val">{CONTENT.brand.email}</div>
-            </div>
-            <div className="info-row">
-              <div className="lbl">Office hours</div>
-              <div className="val">Monday — Friday · 9:00 to 17:00 WAT</div>
+const ContactPage = () => {
+  const [status, setStatus] = useStateP("idle"); // idle | sending | success | error
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    setStatus("sending");
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+      if (res.ok) {
+        setStatus("success");
+        form.reset();
+      } else {
+        setStatus("error");
+      }
+    } catch (err) {
+      setStatus("error");
+    }
+  };
+
+  return (
+    <main className="contact-page">
+      <div className="container">
+        <div className="contact-grid">
+          <div>
+            <span className="eyebrow"><span className="bullet" /> Get in touch</span>
+            <h1 style={{ marginTop: 18 }}>
+              Drop us a note.<br /><em>We read every one</em>.
+            </h1>
+            <p className="lead">
+              Whether you'd like to volunteer, partner, fundraise, or simply learn more about our work — we'd love to hear from you.
+            </p>
+
+            <div className="contact-info">
+              <div className="info-row">
+                <div className="lbl"><Icon name="pin" size={12} /> &nbsp;Address</div>
+                <div className="val">{CONTENT.brand.address}</div>
+              </div>
+              <div className="info-row">
+                <div className="lbl"><Icon name="phone" size={12} /> &nbsp;Phone</div>
+                <div className="val">{CONTENT.brand.phone}</div>
+              </div>
+              <div className="info-row">
+                <div className="lbl"><Icon name="mail" size={12} /> &nbsp;Email</div>
+                <div className="val">{CONTENT.brand.email}</div>
+              </div>
+              <div className="info-row">
+                <div className="lbl">Office hours</div>
+                <div className="val">Monday — Friday · 9:00 to 17:00 WAT</div>
+              </div>
             </div>
           </div>
+
+          <form className="contact-form" onSubmit={handleSubmit}>
+            <div className="row2">
+              <div className="field">
+                <label>First name</label>
+                <input type="text" name="first_name" placeholder="Aisha" required />
+              </div>
+              <div className="field">
+                <label>Last name</label>
+                <input type="text" name="last_name" placeholder="Mohammed" required />
+              </div>
+            </div>
+            <div className="field">
+              <label>Email</label>
+              <input type="email" name="email" placeholder="you@email.com" required />
+            </div>
+            <div className="field">
+              <label>I'd like to</label>
+              <select name="reason" defaultValue="volunteer">
+                <option value="volunteer">Volunteer my time</option>
+                <option value="partner">Partner with the foundation</option>
+                <option value="fundraise">Run a fundraiser</option>
+                <option value="learn">Learn about your programmes</option>
+                <option value="other">Something else</option>
+              </select>
+            </div>
+            <div className="field">
+              <label>Message</label>
+              <textarea rows={5} name="message" placeholder="Tell us a little about why you're getting in touch..." required />
+            </div>
+            <button type="submit" disabled={status === "sending"}>
+              {status === "sending" ? "Sending..." : <>Send message <Icon name="arrow-right" size={14} /></>}
+            </button>
+            {status === "success" && (
+              <p style={{ marginTop: 12, color: "green" }}>Thanks — your message has been sent. We'll get back to you soon.</p>
+            )}
+            {status === "error" && (
+              <p style={{ marginTop: 12, color: "crimson" }}>Something went wrong sending your message. Please try again or email us directly.</p>
+            )}
+          </form>
         </div>
-
-        <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
-          <div className="row2">
-            <div className="field">
-              <label>First name</label>
-              <input type="text" placeholder="Aisha" />
-            </div>
-            <div className="field">
-              <label>Last name</label>
-              <input type="text" placeholder="Mohammed" />
-            </div>
-          </div>
-          <div className="field">
-            <label>Email</label>
-            <input type="email" placeholder="you@email.com" />
-          </div>
-          <div className="field">
-            <label>I'd like to</label>
-            <select defaultValue="volunteer">
-              <option value="volunteer">Volunteer my time</option>
-              <option value="partner">Partner with the foundation</option>
-              <option value="fundraise">Run a fundraiser</option>
-              <option value="learn">Learn about your programmes</option>
-              <option value="other">Something else</option>
-            </select>
-          </div>
-          <div className="field">
-            <label>Message</label>
-            <textarea rows={5} placeholder="Tell us a little about why you're getting in touch..." />
-          </div>
-          <button type="submit">Send message <Icon name="arrow-right" size={14} /></button>
-        </form>
       </div>
-    </div>
-  </main>
-);
+    </main>
+  );
+};
 
 Object.assign(window, {
   AboutPage, DonatePage, CausesPage, StoriesPage, GalleryPage, ContactPage,
