@@ -426,7 +426,36 @@ const Involve = ({ go }) => (
 /* ============================================================
    Footer
    ============================================================ */
-const Footer = ({ go }) => (
+// ⚠️ Replace "YOUR_NEWSLETTER_FORM_ID" with a Formspree form ID dedicated
+// to newsletter signups (create a second form on formspree.io so these
+// don't mix in with your contact messages).
+const NEWSLETTER_ENDPOINT = "https://formspree.io/f/xjgnnwno";
+
+const Footer = ({ go }) => {
+  const [subStatus, setSubStatus] = useState("idle"); // idle | sending | success | error
+
+  const handleSubscribe = async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    setSubStatus("sending");
+    try {
+      const res = await fetch(NEWSLETTER_ENDPOINT, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+      if (res.ok) {
+        setSubStatus("success");
+        form.reset();
+      } else {
+        setSubStatus("error");
+      }
+    } catch (err) {
+      setSubStatus("error");
+    }
+  };
+
+  return (
   <footer className="footer">
     <div className="container">
       <div className="footer-grid">
@@ -435,10 +464,18 @@ const Footer = ({ go }) => (
           <p className="blurb">
             Building a just, inclusive, and empowered society through healthcare, education, and sustainable livelihood opportunities in Nigeria.
           </p>
-          <form className="news" onSubmit={(e) => e.preventDefault()}>
-            <input type="email" placeholder="Your email" aria-label="Email" />
-            <button type="submit">Subscribe</button>
+          <form className="news" onSubmit={handleSubscribe}>
+            <input type="email" name="email" placeholder="Your email" aria-label="Email" required />
+            <button type="submit" disabled={subStatus === "sending"}>
+              {subStatus === "sending" ? "..." : "Subscribe"}
+            </button>
           </form>
+          {subStatus === "success" && (
+            <p style={{ marginTop: 10, fontSize: 13, color: "var(--accent)" }}>Thanks — you're subscribed.</p>
+          )}
+          {subStatus === "error" && (
+            <p style={{ marginTop: 10, fontSize: 13, color: "crimson" }}>Something went wrong. Please try again.</p>
+          )}
         </div>
 
         <div>
@@ -489,7 +526,8 @@ const Footer = ({ go }) => (
       </div>
     </div>
   </footer>
-);
+  );
+};
 
 Object.assign(window, {
   TopBar, TickerBar, Hero, Strip, Causes, Impact, Stories, Pull, DonateCTA, Involve, Footer,
