@@ -448,7 +448,8 @@ const Footer = ({ go }) => (
       <div className="footer-bot">
         <div>© 2026 Chiroma Empowerment Foundation · A registered Nigerian non-profit</div>
         <div className="socials">
-          <a href="https://instagram.com/chiroma_foundation?igsh=MTBhcGYyZWZtNnNtNQ%3D%3D&utm_source=qr" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.instagram.com/chiroma_foundation?igsh=MTBhcGYyZWZtNnNtNQ%3D%3D&utm_source=qr" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><Icon name="instagram" size={18} /></a>
+          <a href="https://www.tiktok.com/@chiroma.emp.found?_r=1&_t=ZS-98YuBwemF17" aria-label="TikTok" target="_blank" rel="noopener noreferrer"><Icon name="tiktok" size={18} /></a>
           <a href="#" aria-label="Twitter"><Icon name="twitter" size={18} /></a>
           <a href="#" aria-label="Facebook"><Icon name="facebook" size={18} /></a>
           <a href="#" aria-label="LinkedIn"><Icon name="linkedin" size={18} /></a>
