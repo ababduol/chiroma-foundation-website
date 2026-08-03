@@ -115,6 +115,13 @@ const Icon = ({ name, size = 20, stroke = 1.6 }) => {
           <path d="M11 17v-4a2 2 0 0 1 4 0v4M11 10v7" />
         </svg>
       );
+    case "tiktok":
+      return (
+        <svg {...common}>
+          <path d="M14 4v9.5a3 3 0 1 1-2.5-2.96" />
+          <path d="M14 4c.5 2.5 2.2 4 4.5 4.2" />
+        </svg>
+      );
     case "phone":
       return (<svg {...common}><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" /></svg>);
     case "mail":
