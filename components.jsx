@@ -448,7 +448,7 @@ const Footer = ({ go }) => (
       <div className="footer-bot">
         <div>© 2026 Chiroma Empowerment Foundation · A registered Nigerian non-profit</div>
         <div className="socials">
-          <a href="#" aria-label="Instagram"><Icon name="instagram" size={18} /></a>
+          <a href="https://instagram.com/chiroma_foundation?igsh=MTBhcGYyZWZtNnNtNQ%3D%3D&utm_source=qr" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
           <a href="#" aria-label="Twitter"><Icon name="twitter" size={18} /></a>
           <a href="#" aria-label="Facebook"><Icon name="facebook" size={18} /></a>
           <a href="#" aria-label="LinkedIn"><Icon name="linkedin" size={18} /></a>
