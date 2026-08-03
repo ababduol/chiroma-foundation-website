@@ -55,6 +55,7 @@ const BrandMark = ({ onClick }) => (
    Top bar
    ============================================================ */
 const TopBar = ({ route, go }) => {
+  const [menuOpen, setMenuOpen] = useState(false);
   const links = [
     ["home", "Home"],
     ["about", "About"],
@@ -63,10 +64,11 @@ const TopBar = ({ route, go }) => {
     ["gallery", "Gallery"],
     ["contact", "Contact"],
   ];
+  const handleGo = (k) => { go(k); setMenuOpen(false); };
   return (
     <header className="topbar">
       <div className="topbar-inner">
-        <BrandMark onClick={() => go("home")} />
+        <BrandMark onClick={() => handleGo("home")} />
         <nav className="nav">
           {links.map(([k, label]) => (
             <a
@@ -84,6 +86,29 @@ const TopBar = ({ route, go }) => {
         >
           <span className="dot" /> Donate
         </a>
+        <button
+          className={"nav-burger" + (menuOpen ? " open" : "")}
+          aria-label="Menu"
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen((v) => !v)}
+        >
+          <span /><span /><span />
+        </button>
+      </div>
+      <div className={"mobile-nav" + (menuOpen ? " open" : "")}>
+        {links.map(([k, label]) => (
+          <a
+            key={k}
+            className={"mobile-nav-link" + (route === k ? " active" : "")}
+            href={"#/" + k}
+            onClick={(e) => { e.preventDefault(); handleGo(k); }}
+          >{label}</a>
+        ))}
+        <a
+          className="mobile-nav-link donate"
+          href="#/donate"
+          onClick={(e) => { e.preventDefault(); handleGo("donate"); }}
+        >Donate</a>
       </div>
     </header>
   );
