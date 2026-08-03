@@ -404,13 +404,35 @@ const GalleryPage = () => (
 /* ============================================================
    Contact page
    ============================================================ */
-// ⚠️ STEP 1: Replace "YOUR_TYPEFORM_ID" below with your real Typeform ID.
-// Create your form at https://typeform.com, then click Share — the link looks
-// like "https://form.typeform.com/to/abcDEFg". Just swap the ID part (the bit
-// after "/to/") into the string below.
-const TYPEFORM_ID = "R7YjJlv9";
+// ⚠️ STEP 1: Replace "YOUR_FORM_ID" below with your real Formspree form ID.
+// You get this after creating a form at https://formspree.io — it looks like
+// "https://formspree.io/f/abcdwxyz". Just swap the ID part in the string below.
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/mojggddv";
 
 const ContactPage = () => {
+  const [status, setStatus] = useStateP("idle"); // idle | sending | success | error
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    setStatus("sending");
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+      if (res.ok) {
+        setStatus("success");
+        form.reset();
+      } else {
+        setStatus("error");
+      }
+    } catch (err) {
+      setStatus("error");
+    }
+  };
+
   return (
     <main className="contact-page">
       <div className="container">
@@ -444,14 +466,45 @@ const ContactPage = () => {
             </div>
           </div>
 
-          <div className="contact-form" style={{ padding: 0, overflow: "hidden" }}>
-            <iframe
-              src={"https://form.typeform.com/to/" + TYPEFORM_ID}
-              title="Contact form"
-              style={{ width: "100%", height: 640, border: "none", borderRadius: "inherit" }}
-              allow="camera; microphone; autoplay; encrypted-media;"
-            />
-          </div>
+          <form className="contact-form" onSubmit={handleSubmit}>
+            <div className="row2">
+              <div className="field">
+                <label>First name</label>
+                <input type="text" name="first_name" placeholder="Aisha" required />
+              </div>
+              <div className="field">
+                <label>Last name</label>
+                <input type="text" name="last_name" placeholder="Mohammed" required />
+              </div>
+            </div>
+            <div className="field">
+              <label>Email</label>
+              <input type="email" name="email" placeholder="you@email.com" required />
+            </div>
+            <div className="field">
+              <label>I'd like to</label>
+              <select name="reason" defaultValue="volunteer">
+                <option value="volunteer">Volunteer my time</option>
+                <option value="partner">Partner with the foundation</option>
+                <option value="fundraise">Run a fundraiser</option>
+                <option value="learn">Learn about your programmes</option>
+                <option value="other">Something else</option>
+              </select>
+            </div>
+            <div className="field">
+              <label>Message</label>
+              <textarea rows={5} name="message" placeholder="Tell us a little about why you're getting in touch..." required />
+            </div>
+            <button type="submit" disabled={status === "sending"}>
+              {status === "sending" ? "Sending..." : <>Send message <Icon name="arrow-right" size={14} /></>}
+            </button>
+            {status === "success" && (
+              <p style={{ marginTop: 12, color: "green" }}>Thanks — your message has been sent. We'll get back to you soon.</p>
+            )}
+            {status === "error" && (
+              <p style={{ marginTop: 12, color: "crimson" }}>Something went wrong sending your message. Please try again or email us directly.</p>
+            )}
+          </form>
         </div>
       </div>
     </main>
