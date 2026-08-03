@@ -287,6 +287,52 @@ button {
 .top-cta .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px color-mix(in oklab, var(--accent) 30%, transparent); transition: background .2s, box-shadow .2s; }
 .top-cta:hover .dot { background: var(--bg); box-shadow: 0 0 0 4px color-mix(in oklab, var(--bg) 30%, transparent); }
 
+.nav-burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--rule);
+  border-radius: var(--r-md, 10px);
+  background: var(--bg-card, transparent);
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+}
+.nav-burger span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  margin: 0 auto;
+  background: var(--ink);
+  transition: transform .2s ease, opacity .2s ease;
+}
+.nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-burger.open span:nth-child(2) { opacity: 0; }
+.nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .25s ease;
+  background: var(--bg);
+  border-bottom: 1px solid var(--rule);
+}
+.mobile-nav.open { max-height: 480px; }
+.mobile-nav-link {
+  padding: 16px 24px;
+  font-size: 15px;
+  color: var(--ink-2);
+  border-bottom: 1px solid var(--rule);
+  text-decoration: none;
+}
+.mobile-nav-link.active { color: var(--ink); font-weight: 600; }
+.mobile-nav-link.donate { color: var(--accent); font-weight: 600; }
+
 /* ----- Buttons ----- */
 .btn {
   display: inline-flex;
@@ -1784,7 +1830,44 @@ button {
   .involve,
   .team-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
-  .nav { display: none; }
+  .nav,
+  .top-cta { display: none; }
+  .nav-burger { display: flex; }
+  .mobile-nav { display: flex; }
   .timeline-row { grid-template-columns: 80px 1fr; }
   .timeline-row p { grid-column: 2; }
+}
+
+/* Phone-specific fixes */
+@media (max-width: 640px) {
+  .container,
+  .container-narrow { padding: 0 20px; }
+  .topbar-inner { padding: 14px 20px; gap: 12px; }
+  .brand-name .b { display: none; }
+
+  .hero h1 { font-size: clamp(38px, 11vw, 64px); }
+  .footer-megaword { font-size: clamp(48px, 16vw, 96px); white-space: normal; }
+  .footer-megaword .country { display: none; }
+
+  .causes,
+  .impact-grid,
+  .involve,
+  .team-grid,
+  .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .gi-1, .gi-2, .gi-3, .gi-4, .gi-5, .gi-6, .gi-7, .gi-8 {
+    grid-column: span 1;
+    aspect-ratio: 1/1;
+  }
+
+  .amount-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .donate-form,
+  .contact-form { padding: 24px 20px; }
+
+  .row2 { grid-template-columns: 1fr; gap: 16px; }
+
+  section.section,
+  .section { padding-top: 48px; padding-bottom: 48px; }
 }
