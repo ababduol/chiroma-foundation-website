@@ -689,7 +689,7 @@ button {
   gap: 56px;
   padding: 16px 0;
   white-space: nowrap;
-  animation: scroll 30s linear infinite;
+  animation: scroll 15s linear infinite;
 }
 .strip-item {
   display: inline-flex;
