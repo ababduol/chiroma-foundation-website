@@ -146,6 +146,7 @@ const CONTENT = {
     { cls: "gi-6", src: "photos/03-hygiene-children.jpeg",   label: "COMMUNITY EDUCATION" },
     { cls: "gi-7", src: "photos/09-hepatitis-awareness.jpeg", label: "HEPATITIS AWARENESS EVENT" },
     { cls: "gi-8", src: "photos/02-school-outreach.jpeg",    label: "OUT-OF-SCHOOL OUTREACH" },
+    { cls: "gi-9", src: "photos/10-idp-support.jpeg",        label: "INTERNALLY DISPLACED PERSONS" },
   ],
 };
 
