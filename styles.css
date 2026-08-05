@@ -1784,7 +1784,7 @@ button {
   .lightbox-content img { max-height: 60vh; }
 }
 
-.gi-1, .gi-2, .gi-3, .gi-4, .gi-5, .gi-6, .gi-7, .gi-8 {
+.gi-1, .gi-2, .gi-3, .gi-4, .gi-5, .gi-6, .gi-7, .gi-8, .gi-9 {
   grid-column: span 1;
   aspect-ratio: 1/1;
 }
@@ -1915,7 +1915,7 @@ button {
   .footer-grid { grid-template-columns: 1fr; gap: 24px; }
 
   .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
-  .gi-1, .gi-2, .gi-3, .gi-4, .gi-5, .gi-6, .gi-7, .gi-8 {
+  .gi-1, .gi-2, .gi-3, .gi-4, .gi-5, .gi-6, .gi-7, .gi-8, .gi-9 {
     grid-column: span 1;
     aspect-ratio: 1/1;
   }
