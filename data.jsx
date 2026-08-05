@@ -64,7 +64,7 @@ const CONTENT = {
       title: "Hepatitis screening reaches 2,400 in a single day",
       body:
         "Working with the Bauchi State Ministry of Health, we set up free hepatitis B and C testing under one tent — mothers, daughters, and grandmothers shoulder to shoulder. By sundown the lab had run 2,400 tests, and 380 women started on care the same week.",
-      name: "Dr. Aisha Chiroma",
+      name: "Faiz Ahmed Omar",
       meta: "Founder · Bauchi Outreach Day",
       badge: "HEALTHCARE · 2026",
       img: "photos/01-hepatitis-outreach.jpeg",
@@ -90,7 +90,7 @@ const CONTENT = {
 
   pullQuote:
     "Every Naira given is a hand extended — into a clinic, a classroom, a market stall. We don't aim to give people a future; we walk alongside them while they build one.",
-  pullAttrib: "Dr. Aisha Chiroma · Founder",
+  pullAttrib: "Faiz Ahmed Omar · Founder",
 
   donateAmounts: [
     { v: "₦5,000",   impact: "Two months of school supplies for a child" },
@@ -131,10 +131,10 @@ const CONTENT = {
   ],
 
   team: [
-    { name: "Dr. Aisha Chiroma", role: "Founder & Executive Director", img: "photos/01-hepatitis-outreach.jpeg" },
-    { name: "Dr. Abdulhalim Abdullahi",    role: "Programmes Director",          img: "photos/02-school-outreach.jpeg" },
-    { name: "Dr.Nasir Ahmed Omar",      role: "Head of Health Outreach",      img: "photos/06-hepatitis-testing.jpeg" },
-    { name: "Aisha Sani Suleiman",      role: "Livelihoods Lead",             img: "photos/05-2sure-volunteers.jpeg" },
+    { name: "Faiz Ahmed Omar", role: "Founder & Executive Director", img: "photos/01-hepatitis-outreach.jpeg" },
+    { name: "Yusuf Mohammed",    role: "Programmes Director",          img: "photos/02-school-outreach.jpeg" },
+    { name: "Ngozi Okafor",      role: "Head of Health Outreach",      img: "photos/06-hepatitis-testing.jpeg" },
+    { name: "Ibrahim Sani",      role: "Livelihoods Lead",             img: "photos/05-2sure-volunteers.jpeg" },
   ],
 
   gallery: [
