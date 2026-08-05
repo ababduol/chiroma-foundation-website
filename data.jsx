@@ -134,7 +134,7 @@ const CONTENT = {
     { name: "Faiz Ahmed Omar",    role: "Founder & Executive Director", img: "photos/01-hepatitis-outreach.jpeg" },
     { name: "Abdulhalim Abdullahi", role: "Programmes Director",        img: "photos/02-school-outreach.jpeg" },
     { name: "Nasir Ahmed Omar",   role: "Head of Health Outreach",      img: "photos/06-hepatitis-testing.jpeg" },
-    { name: "Aisha Sani Suleiman", role: "Livelihoods Lead",            img: "photos/05-2sure-volunteers.jpeg" },
+    { name: "Aisha Sani Suleiman", role: "Livelihoods Lead",            img: "photos/08-hepatitis-screening.jpeg" },
   ],
 
   gallery: [
