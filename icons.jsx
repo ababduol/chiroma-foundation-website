@@ -89,6 +89,22 @@ const Icon = ({ name, size = 20, stroke = 1.6 }) => {
       return (
         <svg {...common}><path d="M12 3 4 6v6c0 5 3.5 8.5 8 9 4.5-.5 8-4 8-9V6l-8-3Z" /><path d="m9 12 2 2 4-4" /></svg>
       );
+    case "chip":
+      return (
+        <svg {...common}>
+          <rect x="7" y="7" width="10" height="10" rx="1.5" />
+          <path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3" />
+        </svg>
+      );
+    case "handshake":
+      return (
+        <svg {...common}>
+          <path d="m2 12 5-4 4 3 4-3 5 4" />
+          <path d="M6 8v6l3 3 2-2" />
+          <path d="M18 8v6l-3 3-2-2" />
+          <path d="m9 14 2 2" />
+        </svg>
+      );
     case "check":
       return (<svg {...common}><path d="m5 12 5 5 9-11" /></svg>);
     case "instagram":
