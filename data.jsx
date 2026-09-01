@@ -7,13 +7,19 @@ const CONTENT = {
     full: "Chiroma Empowerment Foundation",
     tagline: "EMPOWERING COMMUNITIES",
     mission:
-      "Improving the well-being of women, children, IDPs, and underserved communities through integrated and sustainable interventions in healthcare, education, and economic empowerment.",
+      "To build healthier, empowered, and resilient communities by expanding access to health services and education, strengthening community-based health capacity, and supporting vulnerable populations to achieve dignity, self-reliance, and sustainable well-being.",
     vision:
-      "A just, inclusive, and empowered society where women, children, and vulnerable populations have equitable access to quality healthcare, education, and sustainable livelihood opportunities.",
+      "Empowering lives. Building healthier and resilient communities.",
     address: "No 54, Makama New Extension, Bauchi, Bauchi State, Nigeria",
     phone: "+234 812 526 2405",
     email: "chiromafoundation@gmail.com",
   },
+
+  coreValues: [
+    { code: "I", title: "Integrity", body: "Operating with honesty, transparency, and accountability." },
+    { code: "C", title: "Compassion", body: "Serving with empathy and respect." },
+    { code: "E", title: "Equity", body: "Ensuring inclusive and fair access to opportunities and services." },
+  ],
 
   heroStats: [
     { num: "1,800+", lbl: "Lives reached in our first months" },
@@ -24,31 +30,55 @@ const CONTENT = {
   causes: [
     {
       num: "01",
-      title: "Maternal & child healthcare",
+      title: "Community Health & Empowerment",
       body:
-        "Free clinics, antenatal outreach, and child nutrition programs that meet families where they live.",
-      icon: "stethoscope",
+        "Strengthen the knowledge, skills, agency and participation of individuals and communities while building the capacity of community-based frontline actors to promote health and deliver essential services in underserved, hard-to-reach and vulnerable communities.",
+      icon: "users",
+      objectives: [
+        "Improve health literacy, healthy behaviours and informed health-seeking among individuals, families and communities.",
+        "Strengthen the competencies of community-based frontline actors, including traditional birth attendants, community health officers and volunteers.",
+        "Increase meaningful community participation and ownership in health promotion and disease prevention.",
+        "Strengthen community linkages with formal health services to improve referral and continuity of care.",
+      ],
     },
     {
       num: "02",
-      title: "Education for the next generation",
+      title: "Health Security & Community Resilience",
       body:
-        "School fees, learning kits, and scholarships for girls and out-of-school children in northern Nigeria.",
-      icon: "book",
+        "Strengthen community and local-level capacity to prevent, anticipate, detect, prepare for, respond to and recover from public health threats and emergencies, while supporting national health-security priorities through collaboration with NCDC and other relevant government and development partners.",
+      icon: "shield",
+      objectives: [
+        "Strengthen local capacity for prevention, preparedness, early detection, risk communication and response.",
+        "Support communities to contribute to disease surveillance, early warning and reporting in collaboration with NCDC.",
+        "Strengthen resilience and continuity of essential services during outbreaks, disasters and displacement.",
+        "Promote understanding of One Health, zoonotic disease prevention and antimicrobial resistance.",
+      ],
     },
     {
       num: "03",
-      title: "Livelihoods & skills training",
+      title: "Digital Health, Technology & Innovation",
       body:
-        "Vocational training, micro-grants, and cooperative support that turn skills into sustainable income.",
-      icon: "sprout",
+        "Harness digital technologies, artificial intelligence, data and innovative approaches to improve health information, community-based service delivery, surveillance, decision-making and access to solutions for underserved populations.",
+      icon: "chip",
+      objectives: [
+        "Apply digital technologies and AI to expand access to reliable health information and community-based support.",
+        "Develop technology-enabled solutions that strengthen frontline health actors' capacity and connectivity.",
+        "Promote responsible use of data, analytics and AI in surveillance, planning and decision-making.",
+        "Identify, test and scale innovative, ethical and locally appropriate technology solutions.",
+      ],
     },
     {
       num: "04",
-      title: "Humanitarian relief for IDPs",
+      title: "Partnerships, Resource Mobilisation & Sustainable Impact",
       body:
-        "Food, shelter kits, and dignity packages for internally displaced persons across Bauchi and beyond.",
-      icon: "shield",
+        "Build strategic partnerships and mobilise financial, technical and institutional resources to strengthen programmes, generate evidence, scale effective solutions and achieve sustainable, measurable community impact.",
+      icon: "handshake",
+      objectives: [
+        "Establish strategic partnerships with government, development partners, academia, civil society and the private sector.",
+        "Mobilise diversified financial, technical and institutional resources to expand reach and sustainability.",
+        "Strengthen monitoring, evaluation, research and learning to generate evidence and demonstrate impact.",
+        "Develop, document and scale effective, locally led and cost-conscious interventions.",
+      ],
     },
   ],
 
