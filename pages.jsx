@@ -39,6 +39,29 @@ const AboutPage = ({ go }) => (
       </div>
     </section>
 
+    <section className="section">
+      <div className="container">
+        <div className="section-head">
+          <div>
+            <span className="eyebrow"><span className="bullet" /> What guides us</span>
+            <h2 style={{ marginTop: 14 }}>Core <em>values</em>.</h2>
+          </div>
+          <p className="lead">
+            Evidence-driven impact sits at the centre of how we operate, with every other value supporting our ability to protect, sustain, and uplift the communities we serve.
+          </p>
+        </div>
+        <div className="involve">
+          {CONTENT.brand.coreValues.map((v) => (
+            <div className="inv-card" key={v.code}>
+              <div className="num">{v.code}</div>
+              <h3>{v.title}</h3>
+              <p>{v.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
     <section className="timeline">
       <div className="container">
         <div className="section-head">
@@ -272,29 +295,16 @@ const CausesPage = ({ go }) => (
               <p style={{ color: "var(--ink-2)", fontSize: 15, lineHeight: 1.65 }}>
                 {c.body}
               </p>
-              <p style={{ color: "var(--ink-2)", fontSize: 15, lineHeight: 1.65, marginTop: 12 }}>
-                {[
-                  "We run quarterly mobile clinics, antenatal classes, and a child nutrition initiative serving 4 local government areas in Bauchi State.",
-                  "Through scholarships, learning kits, and after-school tutoring, we support girls and out-of-school children to stay in education through senior secondary.",
-                  "Our vocational centre in Makama trains women in tailoring, hairdressing, catering, and digital literacy — paired with small grants and cooperative formation.",
-                  "Coordinated with state agencies and community leaders, we deliver food, hygiene kits, and shelter materials to displaced families across the north-east.",
-                ][i]}
-              </p>
             </div>
             <div>
               <div style={{ fontFamily: "var(--mono)", fontSize: 11, letterSpacing: ".14em", color: "var(--ink-3)", marginBottom: 14 }}>
-                BY THE NUMBERS · Q1 2026
+                STRATEGIC OBJECTIVES
               </div>
-              <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-                {[
-                  [["2,400", "Free hepatitis tests run"], ["380", "Started on care same week"], ["3", "Partner clinics"]],
-                  [["600", "Out-of-school children reached"], ["1,200", "Trained in Be2Sure hygiene"], ["3", "Schools active"]],
-                  [["—", "Launching late 2026"], ["—", "Vocational pilot in planning"], ["—", "—"]],
-                  [["—", "Launching late 2026"], ["—", "Partnership in discussion"], ["—", "—"]],
-                ][i].map(([n, l]) => (
-                  <div key={l} style={{ display: "flex", justifyContent: "space-between", paddingBottom: 10, borderBottom: "1px solid var(--rule)" }}>
-                    <span style={{ fontSize: 13, color: "var(--ink-2)" }}>{l}</span>
-                    <span style={{ fontFamily: "var(--serif)", fontSize: 20, color: "var(--brand)" }}>{n}</span>
+              <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+                {c.objectives.map((o) => (
+                  <div key={o} style={{ display: "flex", gap: 10, alignItems: "flex-start", paddingBottom: 12, borderBottom: "1px solid var(--rule)" }}>
+                    <span style={{ marginTop: 2, flexShrink: 0, color: "var(--brand)" }}><Icon name="check" size={14} /></span>
+                    <span style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--ink-2)" }}>{o}</span>
                   </div>
                 ))}
               </div>
