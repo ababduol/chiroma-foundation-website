@@ -79,13 +79,6 @@ const TopBar = ({ route, go }) => {
             >{label}</a>
           ))}
         </nav>
-        <a
-          className="top-cta"
-          href="#/donate"
-          onClick={(e) => { e.preventDefault(); go("donate"); }}
-        >
-          <span className="dot" /> Donate
-        </a>
         <button
           className={"nav-burger" + (menuOpen ? " open" : "")}
           aria-label="Menu"
@@ -104,11 +97,6 @@ const TopBar = ({ route, go }) => {
             onClick={(e) => { e.preventDefault(); handleGo(k); }}
           >{label}</a>
         ))}
-        <a
-          className="mobile-nav-link donate"
-          href="#/donate"
-          onClick={(e) => { e.preventDefault(); handleGo("donate"); }}
-        >Donate</a>
       </div>
     </header>
   );
@@ -134,11 +122,11 @@ const Hero = ({ go, variant }) => {
               {CONTENT.brand.mission}
             </p>
             <div className="hero-actions">
-              <button className="btn btn-accent" onClick={() => go("donate")}>
-                Donate now <Icon name="arrow-right" size={16} />
+              <button className="btn btn-accent" onClick={() => go("causes")}>
+                See our work <Icon name="arrow-right" size={16} />
               </button>
-              <button className="btn btn-ghost" onClick={() => go("causes")}>
-                See our work
+              <button className="btn btn-ghost" onClick={() => go("contact")}>
+                Get involved
               </button>
             </div>
             <div className="hero-meta">
@@ -191,7 +179,7 @@ const Strip = () => {
       <div className="strip-track">
         {doubled.map(([a, b], i) => (
           <span className="strip-item" key={i}>
-            {a} <em>{b}</em>
+            {a} <em>{b}</em>
           </span>
         ))}
       </div>
@@ -491,7 +479,6 @@ const Footer = ({ go }) => {
         <div>
           <h4>Act</h4>
           <ul>
-            <li><a href="#/donate" onClick={(e) => { e.preventDefault(); go("donate"); }}>Donate</a></li>
             <li><a href="#/contact" onClick={(e) => { e.preventDefault(); go("contact"); }}>Volunteer</a></li>
             <li><a href="#/contact" onClick={(e) => { e.preventDefault(); go("contact"); }}>Partner with us</a></li>
             <li><a href="#/contact" onClick={(e) => { e.preventDefault(); go("contact"); }}>Fundraise</a></li>
