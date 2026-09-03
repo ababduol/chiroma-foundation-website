@@ -51,7 +51,7 @@ const AboutPage = ({ go }) => (
           </p>
         </div>
         <div className="involve">
-          {CONTENT.coreValues.map((v) => (
+          {CONTENT.brand.coreValues.map((v) => (
             <div className="inv-card" key={v.code}>
               <div className="num">{v.code}</div>
               <h3>{v.title}</h3>
