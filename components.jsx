@@ -46,7 +46,7 @@ const BrandMark = ({ onClick }) => (
     <div className="brand-mark" aria-hidden="true"><LogoMark size={30} color="var(--bg)" accent="var(--accent)" /></div>
     <div className="brand-name">
       <span className="a">Chiroma</span>
-      <span className="b">Empowerment · Nigeria</span>
+      <span className="b">Foundation · Nigeria</span>
     </div>
   </div>
 );
