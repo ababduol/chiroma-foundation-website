@@ -122,7 +122,7 @@ const Hero = ({ go, variant }) => {
             </div>
           </div>
           {variant !== "statement" && (
-            <div className="hero-image reveal" style={{ "--reveal-delay": "120ms" }}>
+            <div className="hero-image" style={{ "--reveal-delay": "120ms" }}>
               <img src="photos/07-vaccination.jpeg" alt="Vaccination outreach in Bauchi" />
               <span className="tag">Live · 2026</span>
               <div className="float-card">
