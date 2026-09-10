@@ -4,86 +4,76 @@ const { useState: useStateP } = React;
 /* ============================================================
    About page
    ============================================================ */
-const AboutPage = ({ go }) => (
-  <main>
-    <section className="about-hero">
-      <div className="container">
-        <span className="eyebrow"><span className="bullet" /> About the Foundation</span>
-        <h1 style={{ marginTop: 18 }}>
-          We're starting small.<br />A weekend outreach in Bauchi,<br /><em>and a notebook of names</em>.
-        </h1>
-        <p className="lead">
-          Chiroma Empowerment Foundation was founded in early 2026 in Bauchi, Nigeria. Our discipline is simple: meet a community where it is, listen first, and design every programme to outlast us.
+const ABOUT_ACCORDION_ITEMS = [
+  {
+    title: "Our Mission",
+    render: () => (
+      <>
+        <p>{CONTENT.brand.mission}</p>
+        <p style={{ marginTop: 12 }}>
+          We work in integrated cohorts — a mother enrolled in our antenatal programme is invited to vocational training; her daughter is offered a school scholarship. Health, education, and livelihood, braided together.
         </p>
-      </div>
-    </section>
-
-    <section className="about-grid">
-      <div className="container" style={{ display: "contents" }}>
-        <div className="col">
-          <span className="label">Our Mission</span>
-          <h2>To walk alongside <em>the people the system forgets</em>.</h2>
-          <p>{CONTENT.brand.mission}</p>
-          <p style={{ marginTop: 16 }}>
-            We work in integrated cohorts — a mother enrolled in our antenatal programme is invited to vocational training; her daughter is offered a school scholarship. Health, education, and livelihood, braided together.
-          </p>
-        </div>
-        <div className="col">
-          <span className="label">Our Vision</span>
-          <h2>A society where <em>no woman, child, or family</em> is left out.</h2>
-          <p>{CONTENT.brand.vision}</p>
-          <p style={{ marginTop: 16 }}>
-            We measure our work not in headcount but in second visits: people who return, who bring a neighbour, who eventually outgrow us. That's the metric that matters.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section className="section">
-      <div className="container">
-        <div className="section-head">
-          <div>
-            <span className="eyebrow"><span className="bullet" /> What guides us</span>
-            <h2 style={{ marginTop: 14 }}>Core <em>values</em>.</h2>
-          </div>
-          <p className="lead">
-            Evidence-driven impact sits at the centre of how we operate, with every other value supporting our ability to protect, sustain, and uplift the communities we serve.
-          </p>
-        </div>
-        <div className="involve">
-          {CONTENT.coreValues.map((v) => (
-            <div className="inv-card" key={v.code}>
-              <div className="num">{v.code}</div>
-              <h3>{v.title}</h3>
+      </>
+    ),
+  },
+  {
+    title: "Our Vision",
+    render: () => (
+      <>
+        <p>{CONTENT.brand.vision}</p>
+        <p style={{ marginTop: 12 }}>
+          We measure our work not in headcount but in second visits: people who return, who bring a neighbour, who eventually outgrow us. That's the metric that matters.
+        </p>
+      </>
+    ),
+  },
+  {
+    title: "Core Values",
+    render: () => (
+      <div className="acc-values">
+        {CONTENT.coreValues.map((v) => (
+          <div className="acc-value" key={v.code}>
+            <span className="code">{v.code}</span>
+            <div>
+              <h4>{v.title}</h4>
               <p>{v.body}</p>
             </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <section className="timeline">
-      <div className="container">
-        <div className="section-head">
-          <div>
-            <span className="eyebrow"><span className="bullet" /> Timeline</span>
-            <h2 style={{ marginTop: 14 }}>Year one,<br /><em>and just getting started</em>.</h2>
           </div>
-          <p className="lead">
-            Every milestone here started with a request from a community we were already serving — never the other way around.
-          </p>
-        </div>
-        <div className="timeline-rows">
-          {CONTENT.timeline.map((t) => (
-            <div className="timeline-row" key={t.year}>
-              <div className="year">{t.year}</div>
-              <h3>{t.title}</h3>
-              <p>{t.body}</p>
+        ))}
+      </div>
+    ),
+  },
+];
+
+const AboutAccordion = () => {
+  const [open, setOpen] = useStateP(-1);
+  return (
+    <section className="section about-accordion">
+      <div className="container">
+        <div className="acc-list">
+          {ABOUT_ACCORDION_ITEMS.map((it, i) => (
+            <div className={"acc-item" + (open === i ? " open" : "")} key={it.title}>
+              <button
+                type="button"
+                className="acc-head"
+                onClick={() => setOpen(open === i ? -1 : i)}
+                aria-expanded={open === i}
+              >
+                <span>{it.title}</span>
+                <span className="acc-plus" aria-hidden="true">{open === i ? "\u2212" : "+"}</span>
+              </button>
+              {open === i && <div className="acc-body">{it.render()}</div>}
             </div>
           ))}
         </div>
       </div>
     </section>
+  );
+};
+
+const AboutPage = ({ go }) => (
+  <main>
+    <AboutAccordion />
 
     <section className="section">
       <div className="container">
