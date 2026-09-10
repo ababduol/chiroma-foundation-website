@@ -145,14 +145,8 @@ function App() {
 
       {route === "home" && (
         <main>
-          <TickerBar />
           <Hero go={go} variant={t.heroVariant} />
           <Strip />
-          <Impact />
-          <Stories />
-          <Pull />
-          <DonateCTA go={go} />
-          <Involve go={go} />
         </main>
       )}
       {route === "about"   && <AboutPage   go={go} />}
