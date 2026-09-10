@@ -552,6 +552,8 @@ button {
   position: relative;
   overflow: hidden;
   box-shadow: var(--shadow-xl);
+  max-width: 340px;
+  margin-left: auto;
 }
 .hero-image img {
   position: absolute;
