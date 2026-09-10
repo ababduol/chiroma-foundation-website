@@ -1,5 +1,5 @@
 /* global React, ReactDOM,
-   TopBar, Hero, Strip, Intro, Causes, Impact, Stories, Pull, DonateCTA, Involve, Footer,
+   TopBar, Hero, Strip, Causes, Impact, Stories, Pull, DonateCTA, Involve, Footer,
    AboutPage, DonatePage, CausesPage, StoriesPage, GalleryPage, ContactPage,
    TweaksPanel, useTweaks, TweakSection, TweakRadio, TweakSelect */
 
@@ -145,16 +145,8 @@ function App() {
 
       {route === "home" && (
         <main>
-          <TickerBar />
           <Hero go={go} variant={t.heroVariant} />
           <Strip />
-          <Intro />
-          <Causes go={go} />
-          <Impact />
-          <Stories />
-          <Pull />
-          <DonateCTA go={go} />
-          <Involve go={go} />
         </main>
       )}
       {route === "about"   && <AboutPage   go={go} />}
@@ -164,7 +156,7 @@ function App() {
       {route === "gallery" && <GalleryPage go={go} />}
       {route === "contact" && <ContactPage go={go} />}
 
-      <Footer go={go} />
+      {route !== "home" && <Footer go={go} />}
 
       <TweaksPanel title="Tweaks">
         <TweakSection title="Palette">
