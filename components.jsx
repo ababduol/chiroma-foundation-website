@@ -167,6 +167,19 @@ const Strip = () => {
 };
 
 /* ============================================================
+   Intro
+   ============================================================ */
+const Intro = () => (
+  <section className="intro">
+    <div className="container">
+      <span className="eyebrow"><span className="bullet" /> {CONTENT.intro.eyebrow}</span>
+      <h2>{CONTENT.intro.title}</h2>
+      <p>{CONTENT.intro.body}</p>
+    </div>
+  </section>
+);
+
+/* ============================================================
    Causes
    ============================================================ */
 const Causes = ({ go }) => (
@@ -496,5 +509,5 @@ const Footer = ({ go }) => {
 };
 
 Object.assign(window, {
-  TopBar, TickerBar, Hero, Strip, Causes, Impact, Stories, Pull, DonateCTA, Involve, Footer,
+  TopBar, TickerBar, Hero, Strip, Intro, Causes, Impact, Stories, Pull, DonateCTA, Involve, Footer,
 });
