@@ -15,6 +15,13 @@ const CONTENT = {
     email: "chiromafoundation@gmail.com",
   },
 
+  intro: {
+    eyebrow: "Who we are",
+    title: "Introduction",
+    body:
+      "Chiroma Empowerment Foundation is a humanitarian and development-focused non-profit initiative dedicated to building healthier, empowered, and resilient communities across Nigeria, with a particular focus on women, children, internally displaced persons (IDPs), and underserved, hard-to-reach, and vulnerable populations.",
+  },
+
   coreValues: [
     { code: "I", title: "Integrity", body: "Operating with honesty, transparency, and accountability." },
     { code: "C", title: "Compassion", body: "Serving with empathy and respect." },
