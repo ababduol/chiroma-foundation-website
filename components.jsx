@@ -106,9 +106,9 @@ const Hero = ({ go, variant }) => {
       <div className="container">
         <div className="hero-grid">
           <div className="reveal">
-            <h1 style={{ marginTop: 24 }}>
+            <p className="hero-sub" style={{ marginTop: 0 }}>
               To build healthier, empowered, and resilient communities.
-            </h1>
+            </p>
             <div className="hero-meta">
               {[
                 { num: "1.8", em: "K+", lbl: "Lives reached in our first months" },
