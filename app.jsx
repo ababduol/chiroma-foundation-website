@@ -1,6 +1,6 @@
 /* global React, ReactDOM,
-   TopBar, Hero, Strip, Causes, Impact, Stories, Pull, Involve, Footer,
-   AboutPage, CausesPage, StoriesPage, GalleryPage, ContactPage,
+   TopBar, Hero, Strip, Causes, Impact, Stories, Pull, DonateCTA, Involve, Footer,
+   AboutPage, DonatePage, CausesPage, StoriesPage, GalleryPage, ContactPage,
    TweaksPanel, useTweaks, TweakSection, TweakRadio, TweakSelect */
 
 const { useState: useS, useEffect: useE } = React;
@@ -8,7 +8,7 @@ const { useState: useS, useEffect: useE } = React;
 /* ============================================================
    Routing
    ============================================================ */
-const ROUTES = ["home", "about", "causes", "stories", "gallery", "contact"];
+const ROUTES = ["home", "about", "causes", "stories", "gallery", "donate", "contact"];
 
 function parseHash() {
   const h = (window.location.hash || "").replace(/^#\/?/, "");
@@ -148,16 +148,17 @@ function App() {
           <TickerBar />
           <Hero go={go} variant={t.heroVariant} />
           <Strip />
-          <Causes go={go} />
           <Impact />
           <Stories />
           <Pull />
+          <DonateCTA go={go} />
           <Involve go={go} />
         </main>
       )}
       {route === "about"   && <AboutPage   go={go} />}
       {route === "causes"  && <CausesPage  go={go} />}
       {route === "stories" && <StoriesPage go={go} />}
+      {route === "donate"  && <DonatePage  go={go} />}
       {route === "gallery" && <GalleryPage go={go} />}
       {route === "contact" && <ContactPage go={go} />}
 
