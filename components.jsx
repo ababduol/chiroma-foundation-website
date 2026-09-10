@@ -17,7 +17,6 @@ const TickerBar = () => {
   return (
     <div className="ticker-bar">
       <div className="ticker-bar-inner">
-        <span className="live">Live from the field</span>
         <div className="feed">
           <div className="feed-track">
             {doubled.map(([d, t], i) => (
@@ -28,11 +27,6 @@ const TickerBar = () => {
             ))}
           </div>
         </div>
-          <span className="meta">
-            <span>Bauchi · NG</span>
-            <span className="sep" />
-            <span>Est. 2026</span>
-          </span>
       </div>
     </div>
   );
@@ -112,23 +106,9 @@ const Hero = ({ go, variant }) => {
       <div className="container">
         <div className="hero-grid">
           <div className="reveal">
-            <span className="eyebrow"><span className="bullet" /> Bauchi · Nigeria · Est. 2026</span>
             <h1 style={{ marginTop: 24 }}>
-              We walk <em>alongside</em><br />
-              communities <em>building</em><br />
-              <span className="underline">futures</span>.
+              To build healthier, empowered, and resilient communities.
             </h1>
-            <p className="hero-sub">
-              {CONTENT.brand.mission}
-            </p>
-            <div className="hero-actions">
-              <button className="btn btn-accent" onClick={() => go("causes")}>
-                See our work <Icon name="arrow-right" size={16} />
-              </button>
-              <button className="btn btn-ghost" onClick={() => go("contact")}>
-                Get involved
-              </button>
-            </div>
             <div className="hero-meta">
               {[
                 { num: "1.8", em: "K+", lbl: "Lives reached in our first months" },
@@ -145,7 +125,7 @@ const Hero = ({ go, variant }) => {
           {variant !== "statement" && (
             <div className="hero-image reveal" style={{ "--reveal-delay": "120ms" }}>
               <img src="photos/07-vaccination.jpeg" alt="Vaccination outreach in Bauchi" />
-              <span className="tag">Live · Bauchi State · 2026</span>
+              <span className="tag">Live · 2026</span>
               <div className="float-card">
                 <div className="ring"><span>78%</span></div>
                 <div className="ftxt">
