@@ -495,14 +495,6 @@ const Footer = ({ go }) => {
           <a href="#" aria-label="Facebook"><Icon name="facebook" size={18} /></a>
         </div>
       </div>
-
-      <div className="footer-megaword" aria-hidden="true">
-        <span style={{ display: "inline-flex", alignItems: "center", gap: 20 }}>
-          <LogoMark size={72} color="var(--bg)" accent="var(--accent)" />
-          Chiroma
-        </span>
-        <span className="country">Bauchi — NG</span>
-      </div>
     </div>
   </footer>
   );
