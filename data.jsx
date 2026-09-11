@@ -182,10 +182,10 @@ const CONTENT = {
   ],
 
   team: [
-    { name: "Faiz Ahmed Omar",    role: "Founder & Executive Director", img: "photos/01-hepatitis-outreach.jpeg" },
-    { name: "Abdulhalim Abdullahi", role: "Programmes Director",        img: "photos/02-school-outreach.jpeg" },
-    { name: "Nasir Ahmed Omar",   role: "Head of Health Outreach",      img: "photos/06-hepatitis-testing.jpeg" },
-    { name: "Aisha Sani Suleiman", role: "Livelihoods Lead",            img: "photos/08-hepatitis-screening.jpeg" },
+    { name: "Nasir Ahmed Omar",     role: "Lead, Health Security & Technical Strategy",              img: "photos/01-hepatitis-outreach.jpeg" },
+    { name: "Fatima Bello",         role: "Lead, Partnerships, Grants and Resource Mobilisation",     img: "photos/02-school-outreach.jpeg" },
+    { name: "Faiz Ahmed Omar",      role: "Lead, Operations, Finance and Administration",             img: "photos/06-hepatitis-testing.jpeg" },
+    { name: "Abdulhalim Abdullahi", role: "Lead, Community Programmes, Empowerment and Communications", img: "photos/08-hepatitis-screening.jpeg" },
   ],
 
   gallery: [
