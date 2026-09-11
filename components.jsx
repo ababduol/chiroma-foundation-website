@@ -188,7 +188,7 @@ const Causes = ({ go }) => (
       <div className="section-head">
         <div>
           <span className="eyebrow"><span className="bullet" /> Our Causes</span>
-          <h2 style={{ marginTop: 14 }}>Four pillars,<br /><em>one community</em>.</h2>
+          <h2 style={{ marginTop: 14 }}>Five pillars,<br /><em>one community</em>.</h2>
         </div>
         <p className="lead">
           Our work is integrated by design — a girl's education depends on her mother's livelihood, which depends on her family's health. We invest in all four, together.
