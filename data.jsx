@@ -26,6 +26,7 @@ const CONTENT = {
     { code: "I", title: "Integrity", body: "Operating with honesty, transparency, and accountability." },
     { code: "C", title: "Compassion", body: "Serving with empathy and respect." },
     { code: "E", title: "Equity", body: "Ensuring inclusive and fair access to opportunities and services." },
+    { code: "E", title: "Evidence-Based Impact", body: "Grounding every decision, intervention, and claim of success in data, research, and community insight — and holding ourselves accountable to measurable outcomes." },
   ],
 
   heroStats: [
@@ -42,10 +43,10 @@ const CONTENT = {
         "Strengthen the knowledge, skills, agency and participation of individuals and communities while building the capacity of community-based frontline actors to promote health and deliver essential services in underserved, hard-to-reach and vulnerable communities.",
       icon: "users",
       objectives: [
-        "Improve health literacy, healthy behaviours and informed health-seeking among individuals, families and communities.",
-        "Strengthen the competencies of community-based frontline actors, including traditional birth attendants, community health officers and volunteers.",
-        "Increase meaningful community participation and ownership in health promotion and disease prevention.",
-        "Strengthen community linkages with formal health services to improve referral and continuity of care.",
+        "Improve health literacy, healthy behaviours and informed health-seeking among individuals, families and communities, particularly in underserved and vulnerable settings.",
+        "Strengthen the competencies and effectiveness of community-based frontline actors — including traditional birth attendants, community health officers, volunteers and other community health providers — to promote health and deliver appropriate, safe and timely services.",
+        "Increase meaningful community participation and ownership in health promotion, disease prevention and local health initiatives.",
+        "Strengthen community linkages with formal health services to improve referral, continuity of care and access to essential health support.",
       ],
     },
     {
@@ -55,36 +56,49 @@ const CONTENT = {
         "Strengthen community and local-level capacity to prevent, anticipate, detect, prepare for, respond to and recover from public health threats and emergencies, while supporting national health-security priorities through collaboration with NCDC and other relevant government and development partners.",
       icon: "shield",
       objectives: [
-        "Strengthen local capacity for prevention, preparedness, early detection, risk communication and response.",
-        "Support communities to contribute to disease surveillance, early warning and reporting in collaboration with NCDC.",
-        "Strengthen resilience and continuity of essential services during outbreaks, disasters and displacement.",
-        "Promote understanding of One Health, zoonotic disease prevention and antimicrobial resistance.",
+        "Strengthen community and local-level capacity for prevention, preparedness, early detection, risk communication and response to public health threats and emergencies.",
+        "Support communities and frontline actors to contribute effectively to disease surveillance, early warning, reporting and response systems in collaboration with NCDC and relevant government institutions.",
+        "Strengthen community resilience and continuity of essential health and social support services during outbreaks, disasters, displacement and other shocks.",
+        "Promote community understanding and ownership of One Health, zoonotic disease prevention, antimicrobial resistance and other emerging health-security priorities.",
       ],
     },
     {
       num: "03",
-      title: "Digital Health, Technology & Innovation",
+      title: "Digital Health, Technology & AI Innovation",
       body:
         "Harness digital technologies, artificial intelligence, data and innovative approaches to improve health information, community-based service delivery, surveillance, decision-making and access to solutions for underserved populations.",
       icon: "chip",
       objectives: [
-        "Apply digital technologies and AI to expand access to reliable health information and community-based support.",
-        "Develop technology-enabled solutions that strengthen frontline health actors' capacity and connectivity.",
-        "Promote responsible use of data, analytics and AI in surveillance, planning and decision-making.",
-        "Identify, test and scale innovative, ethical and locally appropriate technology solutions.",
+        "Apply appropriate digital technologies and AI to expand access to reliable health information, education and community-based health support, particularly in hard-to-reach settings.",
+        "Develop and support technology-enabled solutions that strengthen the capacity, connectivity and effectiveness of community-based frontline health actors.",
+        "Promote the responsible use of data, analytics and AI to strengthen surveillance, programme planning, risk assessment and decision-making.",
+        "Identify, test, evaluate and scale innovative, ethical, affordable and locally appropriate technology solutions that address priority health challenges.",
       ],
     },
     {
       num: "04",
       title: "Partnerships, Resource Mobilisation & Sustainable Impact",
       body:
-        "Build strategic partnerships and mobilise financial, technical and institutional resources to strengthen programmes, generate evidence, scale effective solutions and achieve sustainable, measurable community impact.",
+        "Build strategic partnerships and mobilise financial, technical and institutional resources to strengthen programmes, scale effective solutions and achieve sustainable, measurable community impact.",
       icon: "handshake",
       objectives: [
-        "Establish strategic partnerships with government, development partners, academia, civil society and the private sector.",
-        "Mobilise diversified financial, technical and institutional resources to expand reach and sustainability.",
-        "Strengthen monitoring, evaluation, research and learning to generate evidence and demonstrate impact.",
-        "Develop, document and scale effective, locally led and cost-conscious interventions.",
+        "Establish strategic partnerships with government, development partners, academia, civil society, communities and the private sector to advance the Foundation's mission.",
+        "Mobilise diversified financial, technical and institutional resources to expand the Foundation's reach and sustainability.",
+        "Track and report on partnership performance and resource utilisation to funders and stakeholders, in support of transparency and accountability.",
+        "Develop, document and scale effective, locally led and cost-conscious interventions that can be sustained, replicated and adapted across communities.",
+      ],
+    },
+    {
+      num: "05",
+      title: "Evidence-Based Interventions & Learning",
+      body:
+        "Generate, apply, and share rigorous evidence — through research, monitoring, evaluation, and community insight — to design effective interventions, demonstrate impact, and continuously strengthen the Foundation's programmes.",
+      icon: "check",
+      objectives: [
+        "Strengthen the Foundation's monitoring, evaluation, research and learning (MERL) systems to generate credible, timely evidence on programme reach, quality and impact.",
+        "Ensure interventions are designed, tested and adapted based on evidence, data and community insight rather than assumption.",
+        "Document, package and disseminate lessons, evidence and best practices to inform programming, policy dialogue and sector-wide learning.",
+        "Institutionalise a culture of reflection, adaptive management and continuous improvement across all programmes.",
       ],
     },
   ],
