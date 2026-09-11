@@ -251,74 +251,7 @@ const DonatePage = () => {
 /* ============================================================
    Causes / Programs page (deep dive)
    ============================================================ */
-const CausesPage = ({ go }) => (
-  <main>
-    <section className="about-hero">
-      <div className="container">
-        <span className="eyebrow"><span className="bullet" /> Our Programmes</span>
-        <h1 style={{ marginTop: 18 }}>
-          Five pillars,<br /><em>braided into one community</em>.
-        </h1>
-        <p className="lead">
-          Every programme is run in partnership with community leaders, local clinicians, and the families it serves. We don't parachute in. We stay.
-        </p>
-      </div>
-    </section>
-
-    <section className="section" style={{ paddingTop: 64 }}>
-      <div className="container" style={{ display: "flex", flexDirection: "column", gap: 24 }}>
-        {CONTENT.causes.map((c, i) => (
-          <div
-            key={c.num}
-            style={{
-              background: "var(--bg-card)",
-              border: "1px solid var(--rule)",
-              borderRadius: "var(--r-lg)",
-              padding: 40,
-              display: "grid",
-              gridTemplateColumns: "120px 1fr 1fr",
-              gap: 32,
-              alignItems: "start",
-            }}
-          >
-            <div>
-              <div style={{ fontFamily: "var(--serif)", fontSize: 48, color: "var(--brand)", lineHeight: 1 }}>
-                {c.num}
-              </div>
-              <div className="glyph" style={{ marginTop: 20 }}><Icon name={c.icon} size={28} /></div>
-            </div>
-            <div>
-              <h3 style={{ fontFamily: "var(--serif)", fontSize: 36, lineHeight: 1.05, marginBottom: 12 }}>
-                {c.title}
-              </h3>
-              <p style={{ color: "var(--ink-2)", fontSize: 15, lineHeight: 1.65 }}>
-                {c.body}
-              </p>
-            </div>
-            <div>
-              <div style={{ fontFamily: "var(--mono)", fontSize: 11, letterSpacing: ".14em", color: "var(--ink-3)", marginBottom: 14 }}>
-                STRATEGIC OBJECTIVES
-              </div>
-              <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-                {c.objectives.map((o) => (
-                  <div key={o} style={{ display: "flex", gap: 10, alignItems: "flex-start", paddingBottom: 12, borderBottom: "1px solid var(--rule)" }}>
-                    <span style={{ marginTop: 2, flexShrink: 0, color: "var(--brand)" }}><Icon name="check" size={14} /></span>
-                    <span style={{ fontSize: 13.5, lineHeight: 1.55, color: "var(--ink-2)" }}>{o}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
-  </main>
-);
-
-/* ============================================================
-   Stories page
-   ============================================================ */
-const StoriesPage = () => {
+const CausesPage = ({ go }) => {
   const all = [
     {
       meta: "HEALTHCARE · MAR 2026",
@@ -353,17 +286,6 @@ const StoriesPage = () => {
   ];
   return (
     <main>
-      <section className="about-hero">
-        <div className="container">
-          <span className="eyebrow"><span className="bullet" /> Stories from the field</span>
-          <h1 style={{ marginTop: 18 }}>
-            Notes from the people<br /><em>we work alongside</em>.
-          </h1>
-          <p className="lead">
-            Every week our team sends back a short note from somewhere in the north-east. These are a few of them.
-          </p>
-        </div>
-      </section>
       <section className="section">
         <div className="container">
           <div className="story-list" style={{ maxWidth: 920 }}>
@@ -383,6 +305,25 @@ const StoriesPage = () => {
     </main>
   );
 };
+
+/* ============================================================
+   Stories page
+   ============================================================ */
+const StoriesPage = () => (
+  <main>
+    <section className="about-hero">
+      <div className="container">
+        <span className="eyebrow"><span className="bullet" /> Stories from the field</span>
+        <h1 style={{ marginTop: 18 }}>
+          Notes from the people<br /><em>we work alongside</em>.
+        </h1>
+        <p className="lead">
+          Every week our team sends back a short note from somewhere in the north-east. These are a few of them.
+        </p>
+      </div>
+    </section>
+  </main>
+);
 
 /* ============================================================
    Gallery page
