@@ -90,14 +90,10 @@ const AboutPage = ({ go }) => (
 
     <section className="section">
       <div className="container">
-        <div className="section-head">
+        <div className="section-head" style={{ gridTemplateColumns: "1fr", marginBottom: 48 }}>
           <div>
-            <span className="eyebrow"><span className="bullet" /> Team</span>
-            <h2 style={{ marginTop: 14 }}>The people who <em>show up</em>.</h2>
+            <h2 style={{ marginTop: 14 }}>Meet our team.</h2>
           </div>
-          <p className="lead">
-            A small staff team supported by hundreds of volunteers, community leaders, and partner clinicians across the north-east.
-          </p>
         </div>
         <div className="team-grid">
           {CONTENT.team.map((m) => (
