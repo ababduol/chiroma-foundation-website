@@ -32,12 +32,25 @@ const ABOUT_ACCORDION_ITEMS = [
     render: () => (
       <div className="acc-values">
         {CONTENT.coreValues.map((v) => (
-          <div className="acc-value" key={v.code}>
+          <div className="acc-value" key={v.title}>
             <span className="code">{v.code}</span>
             <div>
               <h4>{v.title}</h4>
               <p>{v.body}</p>
             </div>
+          </div>
+        ))}
+      </div>
+    ),
+  },
+  {
+    title: "Strategic Pillars",
+    render: () => (
+      <div className="acc-plain">
+        {CONTENT.causes.map((c) => (
+          <div className="acc-plain-item" key={c.title}>
+            <h4>{c.title}</h4>
+            <p>{c.body}</p>
           </div>
         ))}
       </div>
@@ -248,7 +261,7 @@ const CausesPage = ({ go }) => (
       <div className="container">
         <span className="eyebrow"><span className="bullet" /> Our Programmes</span>
         <h1 style={{ marginTop: 18 }}>
-          Four pillars,<br /><em>braided into one community</em>.
+          Five pillars,<br /><em>braided into one community</em>.
         </h1>
         <p className="lead">
           Every programme is run in partnership with community leaders, local clinicians, and the families it serves. We don't parachute in. We stay.
